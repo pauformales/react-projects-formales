@@ -23,7 +23,7 @@ const MovieCard = ({ movies }) => {
           <span className="bg-yellow-500 p-2 font-bold text-sm rounded-lg">
             {vote}
           </span>
-          <span className="mt-2">
+          <span className="mt-2 text-sm">
             {movies.release_date?.slice(0, 4) || "N/A"}
           </span>
         </div>
