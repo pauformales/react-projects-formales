@@ -1,8 +1,8 @@
 const AboutCard = ({ title, content }) => {
   return (
     <div>
-      <h3 className="font-bold mb-2 text-lg">{title}</h3>
-      <p>{content}</p>
+      <h3 className="font-semibold text-gray-800 mb-2 text-lg">{title}</h3>
+      <p className="text-gray-600">{content}</p>
     </div>
   );
 };

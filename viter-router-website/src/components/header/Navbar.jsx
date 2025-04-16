@@ -24,7 +24,7 @@ const Navbar = () => {
 
   return (
     <nav className="bg-white shadow w-full fixed top-0 left-0 z-50">
-      <div className="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+      <div className="flex justify-between items-center px-6 py-4 max-w-6xl mx-auto">
         <h1 className="text-xl font-bold text-blue-600">MySite</h1>
 
         {/* Desktop Menu */}
@@ -33,7 +33,7 @@ const Navbar = () => {
             <a
               key={i}
               href={href}
-              className="flex items-center gap-1 cursor-pointer hover:text-blue-600 hover:bg-blue-200 p-1 transition duration-200 rounded-lg"
+              className="flex items-center gap-1 cursor-pointer hover:text-blue-600 hover:bg-blue-200 p- transition duration-200 rounded-lg"
             >
               {Icon && <Icon />}
               <span>{label}</span>
@@ -44,7 +44,7 @@ const Navbar = () => {
           <div className="relative">
             <button
               onClick={() => setDesktopDropdownOpen(!desktopDropdownOpen)}
-              className="hover:text-blue-600 flex items-center gap-1 hover:bg-blue-200 p-1 transition duration-200 rounded-lg"
+              className="hover:text-blue-600 flex items-center gap-1 hover:bg-blue-200 p- transition duration-200 rounded-lg"
             >
               <span>More</span>
               {desktopDropdownOpen ? (
