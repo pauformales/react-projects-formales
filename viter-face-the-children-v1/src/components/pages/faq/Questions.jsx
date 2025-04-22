@@ -6,7 +6,7 @@ const Questions = () => {
 
   useEffect(() => {
     if (window.innerWidth >= 1024) {
-      setActiveId(1); // Open question 1 on large screens
+      setActiveId(1);
     }
   }, []);
 
@@ -15,11 +15,11 @@ const Questions = () => {
   };
 
   return (
-    <section className="py-16 mt-20 bg-white text-center">
-      <span className="text-textyellow lg:text-sm text-xs uppercase ">
+    <section className="py-16 mt-20 lg:mt-[150px] bg-white text-center">
+      <span className="text-textyellow lg:text-xs text-xs uppercase">
         Your Questions, Our Clarity
       </span>
-      <h3 className="lg:text-4xl text-2xl mb-5 font-semibold text-gray-700 lg:mt-5">
+      <h3 className="lg:text-[45px] text-2xl mb-5 font-semibold text-[#3a3b36] lg:mt-4">
         Our Commitment to Child Development
       </h3>
 
@@ -29,14 +29,22 @@ const Questions = () => {
             <div key={item.id} className="relative">
               <button
                 onClick={() => handleToggle(item.id)}
-                className={`w-full flex items-center justify-between border rounded-lg px-4 py-3 text-left transition ${
-                  activeId === item.id
-                    ? "bg-primary border-blue-300 text-white font-normal"
-                    : "bg-white border-gray-300 hover:bg-gray-50"
-                }`}
+                className={`w-full flex items-center justify-between border rounded-lg px-4 py-3 text-left transition duration-200 font-normal
+                  ${
+                    activeId === item.id
+                      ? "text-primary hover:bg-primary hover:text-white border-blue-300"
+                      : "bg-white  border-gray-300 "
+                  }
+                   hover:bg-primary  hover:text-white hover:border-blue-300`}
               >
                 <span className="flex items-center gap-2">
-                  <span className="text-lg font-semibold text-gray-300">{`0${item.id}`}</span>
+                  <span
+                    className={`text-lg font-semibold ${
+                      activeId === item.id ? "text-gray-300" : "text-gray-300"
+                    }`}
+                  >
+                    {`0${item.id}`}
+                  </span>
                   <span className="text-sm">{item.question}</span>
                 </span>
                 <span className="text-xl transform transition-transform duration-200">
@@ -44,9 +52,9 @@ const Questions = () => {
                 </span>
               </button>
 
-              {/* Responsive Answer Box */}
+              {/* Answer Box */}
               {activeId === item.id && (
-                <div className="lg:absolute lg:left-full text-sm lg:ml-8 lg:top-0 w-full lg:w-[400px] mt-4 lg:mt-0 border border-blue-300 bg-gray-100 rounded-lg p-4 text-gray-700 shadow-md z-10">
+                <div className="lg:absolute lg:left-full text-sm lg:ml-[150px] lg:top-0 w-full lg:w-[400px] mt-4 lg:mt-0 border border-blue-300 bg-gray-100 rounded-lg p-4 text-gray-700 shadow-md z-10">
                   <p>{item.answer}</p>
                 </div>
               )}
@@ -54,7 +62,6 @@ const Questions = () => {
           ))}
         </div>
 
-        {/* Keeps layout balanced on desktop */}
         <div className="hidden lg:block" />
       </div>
     </section>

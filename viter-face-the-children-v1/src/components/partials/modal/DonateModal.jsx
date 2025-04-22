@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MdClose } from "react-icons/md";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 const FloatingInput = ({
   label,
@@ -22,7 +23,7 @@ const FloatingInput = ({
       <select
         id={name}
         name={name}
-        className="w-full border border-primary-300 rounded-md px-3 pt-4 pb-2 text-sm bg-white focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
+        className="w-full border border-primary-300 rounded-md px-3 pt-4 pb-2 text-sm bg-white text-black focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
       >
         <option value="" disabled selected hidden></option>
         {options.map((opt, idx) => (
@@ -49,7 +50,7 @@ const FloatingInput = ({
   </div>
 );
 
-const DonateModal = ({ isOpen, closeModal }) => {
+const DonateModal = ({ isOpen, closeModal, title }) => {
   const [showModal, setShowModal] = useState(isOpen);
 
   useEffect(() => {
@@ -73,7 +74,7 @@ const DonateModal = ({ isOpen, closeModal }) => {
         <div className="relative -m-[24px] overflow-hidden mb-4">
           <div className="bg-primary overflow px-4 py-5 rounded-t-xs w-full">
             <h2 className="text-xl font-semibold text-white">
-              General Donation
+              {title || "Donation"}
             </h2>
           </div>
           <MdClose
@@ -128,13 +129,22 @@ const DonateModal = ({ isOpen, closeModal }) => {
             Donate with your credit card.
           </p>
           <div className="flex justify-end gap-2 mt-2">
-            <img
-              src="/public/creditcards.png"
-              alt="Credit Cards"
-              className="w-25"
-            />
+            <img src="/creditcards.png" alt="Credit Cards" className="w-25" />
           </div>
         </div>
+
+        {/* Add a conditional route link for 'Children Sponsorship' */}
+        {title === "Children Sponsorship" && (
+          <div className="mt-4 text-center">
+            <Link
+              to="/sponsor-section" // Replace with your actual route
+              className="text-primary hover:underline"
+              onClick={closeModal}
+            >
+              Go to Sponsor Section
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

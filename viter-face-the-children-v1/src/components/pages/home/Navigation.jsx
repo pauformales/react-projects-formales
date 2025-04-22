@@ -1,142 +1,98 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const currentPath = location.pathname;
+
+  const navLinks = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "FAQ", path: "/faq" },
+    { name: "Strategy", path: "/strategy" },
+    { name: "Contact", path: "/contact" },
+    { name: "Sponsor child", path: "/sponsor" },
+  ];
 
   return (
-    <nav className="bg-white border-b border-gray-200 shadow-sm fixed top-0 left-0 right-0 z-50 mt-5">
-      <div className="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+    <nav className="bg-[#fafafa] border-b border-gray-200 shadow-sm fixed top-0 left-0 right-0 z-50 mt-8">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         {/* Logo */}
-        <img src="./src/assets/ftc_svg_logo.svg" alt="Logo" className="h-8" />
+        <img src="./src/assets/ftc_svg_logo.svg" alt="Logo" className="h-10" />
 
         {/* Desktop Nav */}
         <ul className="hidden md:flex space-x-6 text-sm text-gray-800 items-center">
-          <li>
-            <Link to="/" className="text-textyellow">
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link to="/about" className="hover:text-orange-500">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link to="/faq" className="hover:text-orange-500">
-              FAQ
-            </Link>
-          </li>
-          <li>
-            <Link to="/strategy" className="hover:text-orange-500">
-              Strategy
-            </Link>
-          </li>
-          <li>
-            <Link to="/contact" className="hover:text-orange-500">
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link to="/sponsor" className="hover:text-orange-500">
-              Sponsor child
-            </Link>
-          </li>
+          {navLinks.map((item) => (
+            <li key={item.path}>
+              <Link
+                to={item.path}
+                className={`${
+                  currentPath === item.path
+                    ? "text-orange-500 "
+                    : "hover:text-orange-500"
+                }`}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+
           <li>
             <Link to="/donate">
-              <button className="bg-primary text-white text-sm px-4 py-1 rounded hover:bg-hover">
+              <button
+                className={`${
+                  currentPath === "/donate" ? "bg-textyellow" : "bg-primary"
+                } text-white text-xs  px-3 py-2 rounded`}
+              >
                 Donate
               </button>
             </Link>
           </li>
         </ul>
 
-        {/* Mobile Menu Button with Smooth Transition */}
+        {/* Mobile Menu Button */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="md:hidden focus:outline-none text-primary"
         >
           <span className="transition-all duration-300 ease-in-out transform">
-            {isOpen ? (
-              <X
-                size={24}
-                className="transition-all duration-300 ease-in-out scale-100 opacity-100"
-              />
-            ) : (
-              <Menu
-                size={24}
-                className="transition-all duration-300 ease-in-out scale-100 opacity-100"
-              />
-            )}
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
           </span>
         </button>
       </div>
 
-      {/* Slide-in Mobile Menu */}
+      {/* Mobile Slide Menu */}
       <div
         className={`fixed top-30 left-0 right-0 h-[calc(100vh-4rem)] w-full bg-white shadow-lg transform transition-transform duration-300 ease-in-out z-40 ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } md:hidden`}
       >
-        <ul className="flex flex-col items-center justify-center space-y-4 mt-8 text-sm text-gray-800">
+        <ul className="flex flex-col items-center justify-center space-y-4 mt-8 text-sm text-gray-800 uppercase">
+          {navLinks.map((item) => (
+            <li key={item.path}>
+              <Link
+                to={item.path}
+                onClick={() => setIsOpen(false)}
+                className={`${
+                  currentPath === item.path
+                    ? "text-orange-500 "
+                    : "hover:text-orange-500"
+                }`}
+              >
+                {item.name}
+              </Link>
+            </li>
+          ))}
+
           <li>
-            <Link
-              to="/"
-              className="text-orange-500 font-semibold"
-              onClick={() => setIsOpen(false)}
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/about"
-              className="hover:text-orange-500"
-              onClick={() => setIsOpen(false)}
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/faq"
-              className="hover:text-orange-500"
-              onClick={() => setIsOpen(false)}
-            >
-              FAQ
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/strategy"
-              className="hover:text-orange-500"
-              onClick={() => setIsOpen(false)}
-            >
-              Strategy
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/contact"
-              className="hover:text-orange-500"
-              onClick={() => setIsOpen(false)}
-            >
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/sponsor"
-              className="hover:text-orange-500"
-              onClick={() => setIsOpen(false)}
-            >
-              Sponsor child
-            </Link>
-          </li>
-          <li>
-            <Link to="/donate">
-              <button className="bg-blue-500 text-white text-sm px-4 py-1 w-32 rounded hover:bg-blue-600">
+            <Link to="/donate" onClick={() => setIsOpen(false)}>
+              <button
+                className={`${
+                  currentPath === "/donate" ? "bg-textyellow  " : "bg-primary"
+                } text-white text-xs py-2  px-3 w-27 rounded`}
+              >
                 Donate
               </button>
             </Link>

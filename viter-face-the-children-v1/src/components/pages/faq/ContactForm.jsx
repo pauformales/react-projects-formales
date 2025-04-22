@@ -6,12 +6,12 @@ const FloatingInput = ({ label, type = "text", name }) => (
       type={type}
       id={name}
       name={name}
-      className="w-full border border-gray-300 rounded-md px-3 pt-4 pb-2  bg-gray-100 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-ring-primary"
+      className="w-full border border-gray-300 rounded-md px-3 pt-4 pb-2 bg-gray-100 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-ring-primary"
       placeholder=" "
     />
     <label
       htmlFor={name}
-      className="absolute left-3 -top-2 text-xs  px-1 bg-gray-100 text-primary"
+      className="absolute left-3 -top-2 text-xs px-1 bg-gray-100 text-primary"
     >
       {label}
     </label>
@@ -20,26 +20,26 @@ const FloatingInput = ({ label, type = "text", name }) => (
 
 const ContactForm = () => {
   return (
-    <section className="py-16 bg-gray-100 mt-20">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center gap-12 justify-center">
-        {/* Left Section */}
-        <div className="w-full lg:w-1/2 flex justify-center sm:justify-start">
-          <div>
-            <p className="text-textyellow uppercase text-xs  mb-1">
+    <section className="py-16 bg-gray-100">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-12">
+        {/* Left Text Block */}
+        <div className="w-full lg:w-1/2">
+          <div className="text-left lg:ml-20">
+            <p className="text-textyellow uppercase text-xs mb-1">
               Frequently Asked Question
             </p>
-            <h2 className="text-primary lg:max-w-[70%] lg:text-3xl text-lg sm:text-3xl font-semibold mb-3">
+            <h2 className="text-primary lg:text-2xl lg:max-w-[55%] text-left font-semibold mb-2">
               Can't find what you are looking for?
             </h2>
-            <p className="text-gray-800 text-sm lg:max-w-[60%]">
-              If your question is not listed above, you can use the form to send
-              directly to us your questions.
+            <p className="text-gray-800 text-sm lg:max-w-[65%] leading-[1.8]">
+              If your questions is not listed above, you can use the form to
+              send directly to us your questions.
             </p>
           </div>
         </div>
 
-        {/* Right Section (Form) */}
-        <div className="w-full lg:w-1/2">
+        {/* Form */}
+        <div className="w-full lg:w-[40%]">
           <form className="flex flex-col gap-4 text-sm">
             <FloatingInput label="Name" name="name" />
             <FloatingInput label="Email" name="email" type="email" />
@@ -51,8 +51,8 @@ const ContactForm = () => {
               <textarea
                 id="message"
                 name="message"
-                rows="4"
-                className="w-full border border-gray-300 bg-gray-100 rounded-md px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-ring-primary resize-none"
+                rows="6"
+                className="w-full h-60 border border-gray-300 bg-gray-100 rounded-md px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-ring-primary resize-none"
                 placeholder=" "
               />
               <label

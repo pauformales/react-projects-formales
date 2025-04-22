@@ -21,35 +21,37 @@ const FloatingInput = ({ label, type = "text", name }) => (
 const MainContact = () => {
   return (
     <div>
-      <section className="py-16  mt-[150px]">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-start gap-12 justify-center">
+      <section className="py-16 mt-[100px] lg:mt-[150px]">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row lg:items-start lg:justify-center">
           {/* Left Section */}
-          <div className="w-full lg:w-1/2 flex justify-center sm:justify-start">
-            <div>
+          <div className="w-full lg:w-1/2 flex lg:justify-center">
+            <div className="lg:ml-[95px] mb-20">
               <p className="text-textyellow uppercase text-xs  mb-1">
                 Let's Talk
               </p>
-              <h2 className="text-primary font-semibold text-2xl sm:text-3xl  mb-8">
+              <h2 className="text-primary font-semibold lg:text-2xl text-lg  mb-5">
                 We're Here for You
               </h2>
-              <p className=" text-sm max-w-md">
+              <p className=" text-sm text-[#3a3b36] leading-[1.8] max-w-[80%]">
                 We believe in building strong relationships and fostering a
                 sense of community. Your feedback and inquiries are important to
                 us, and we strive to respond as quickly and thoroughly as
                 possible.
               </p>
 
-              <p className="mt-5 text-sm">
+              <p className="mt-5 text-[#3a3b36] text-sm">
                 feel free to get in touch with us via phone
               </p>
-              <div className="flex gap-10 mt-5 mb-10 font-semibold text-sm">
+              <div className="lg:flex gap-10 mt-5 mb-10 font-semibold text-sm">
                 <span className="text-primary">
                   Philippines: +63 927 420 3409
                 </span>
-                <span className="text-primary">USA +815 797 9177</span>
+                <span className="flex col text-primary">USA +815 797 9177</span>
               </div>
 
-              <p>Visit us here in the Philippines</p>
+              <p className="text-[#3a3b36] text-sm mb-2">
+                Visit us here in the Philippines
+              </p>
               <span className="font-semibold text-primary text-sm">
                 Frontline Mission Center, Sitio Subac, <br /> Brgy. Sto Nino,
                 San Pablo City, 4000 Laguna
@@ -59,7 +61,7 @@ const MainContact = () => {
 
           {/* Right Section (Form) */}
           <div className="w-full lg:w-1/2">
-            <form className="flex flex-col gap-4 text-sm">
+            <form className="flex flex-col gap-4 w-[530px] text-sm">
               <FloatingInput label="Name" name="name" />
               <FloatingInput label="Email" name="email" type="email" />
               <FloatingInput label="Phone" name="phone" type="tel" />
@@ -71,7 +73,7 @@ const MainContact = () => {
                   id="message"
                   name="message"
                   rows="4"
-                  className="w-full border border-gray-300 rounded-md px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-ring-primary resize-none"
+                  className="w-[530px] h-[300px] border border-gray-300 rounded-md px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-ring-primary resize-none"
                   placeholder=" "
                 />
                 <label

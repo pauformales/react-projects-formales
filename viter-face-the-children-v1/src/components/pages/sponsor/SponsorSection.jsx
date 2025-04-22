@@ -2,6 +2,7 @@ import { useState } from "react";
 import { residentData, nonResidentData } from "./SponsorData";
 import { FaHouse, FaPeopleGroup, FaArrowRight } from "react-icons/fa6";
 import SponsorModal from "../../partials/modal/SponsorModal";
+import { MdOutlineFamilyRestroom } from "react-icons/md";
 
 export default function SponsorSection() {
   const [activeTab, setActiveTab] = useState("resident");
@@ -29,7 +30,7 @@ export default function SponsorSection() {
             className="w-full h-full object-cover"
           />
           <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3">
-            <h3 className="text-lg ">{child.name}</h3>
+            <h3 className="text-lg">{child.name}</h3>
             <div className="flex justify-between items-center mt-2">
               <p className="text-sm text-textyellow mb-0">View Info</p>
               <button
@@ -59,7 +60,7 @@ export default function SponsorSection() {
   return (
     <section className="py-12 mt-[150px]">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-12 justify-center">
-        <div className="flex justify-center gap-8 mb-6 text-xl font-semibold">
+        <div className="flex justify-center gap-8 mb-2 text-[15px] font-semibold">
           <button
             onClick={() => setActiveTab("resident")}
             className={`flex items-center gap-2 ${
@@ -78,42 +79,48 @@ export default function SponsorSection() {
                 : "text-gray-400"
             }`}
           >
-            <FaPeopleGroup /> Non-Resident
+            <MdOutlineFamilyRestroom /> Non-Resident
           </button>
         </div>
 
         {activeTab === "resident" ? (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full justify-items-center">
               {currentData.slice(0, -1).map((child) => (
-                <Card key={child.id} child={child} />
+                <div key={child.id} className="w-full max-w-[280px]">
+                  <Card child={child} />
+                </div>
               ))}
             </div>
 
             {currentData.length % 4 === 1 ? (
               <div className="flex justify-center w-full -mt-8">
-                <div className="w-[300px]">
+                <div className="w-full max-w-[280px]">
                   <Card child={currentData[currentData.length - 1]} />
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full mt-6">
-                <Card child={currentData[currentData.length - 1]} />
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full mt-6 justify-items-center">
+                <div className="w-full max-w-[280px]">
+                  <Card child={currentData[currentData.length - 1]} />
+                </div>
               </div>
             )}
           </>
         ) : (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full justify-items-center">
               {currentData.slice(0, 8).map((child) => (
-                <Card key={child.id} child={child} />
+                <div key={child.id} className="w-full max-w-[280px]">
+                  <Card child={child} />
+                </div>
               ))}
             </div>
 
-            <div className="flex justify-center gap-6 w-full -mt-8">
+            <div className="flex flex-wrap justify-center gap-6 w-full -mt-8">
               {currentData.slice(8, 11).map((child) => (
-                <div className="w-full max-w-[260px]">
-                  <Card key={child.id} child={child} />
+                <div key={child.id} className="w-full max-w-[280px]">
+                  <Card child={child} />
                 </div>
               ))}
             </div>
@@ -124,7 +131,7 @@ export default function SponsorSection() {
       <SponsorModal
         isOpen={isModalOpen}
         closeModal={() => setIsModalOpen(false)}
-        selectedChild={selectedChild} // Pass the selected child data to the modal
+        selectedChild={selectedChild}
       />
     </section>
   );

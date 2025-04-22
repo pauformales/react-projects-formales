@@ -29,10 +29,10 @@ const ChangingLives = () => {
           {/* Action */}
           <div className="my-10">
             <p className="text-sm text-textyellow uppercase mb-1">Our Action</p>
-            <h2 className="lg:text-3xl text-lg text-primary max-w-[60%] font-semibold lg:max-w-[80%] mb-2">
+            <h2 className="lg:text-3xl text-lg text-primary max-w-[70%] font-semibold lg:max-w-[80%] mb-2">
               Creating Lasting Change through Our Intervention
             </h2>
-            <p className="max-w-[85%] text-sm" style={{ lineHeight: "2" }}>
+            <p className="lg:max-w-[85%] text-sm" style={{ lineHeight: "2" }}>
               The Face the Children (FTC) program is established to serve AADN
               children through a program that provides protection, care,
               nurture, education, and spiritual development that affords them a
@@ -40,30 +40,38 @@ const ChangingLives = () => {
               life.
             </p>
 
-            <ul className="mt-4 space-y-4 py-10 lg:max-w-[75%]">
-              <strong className="text-primary font-semibold`">Protect</strong>
+            <ul className=" space-y-4 py-5 lg:max-w-[80%]">
+              <strong className="text-primary text-lg font-semibold`">
+                Protect
+              </strong>
               <li className="pb-5 text-sm" style={{ lineHeight: "2" }}>
                 We provide a safe environment and place for those living in our
                 children’s homes, who are provided full-time care.
               </li>
-              <strong className="text-primary font-semibold">Care</strong>
+              <strong className="text-primary text-lg font-semibold">
+                Care
+              </strong>
               <li className="pb-5 text-sm" style={{ lineHeight: "2" }}>
                 We meet the basic physical and material needs for the children
                 in the FTC program.
               </li>
-              <strong className="text-primary font-semibold">Nurture</strong>
+              <strong className="text-primary text-lg font-semibold">
+                Nurture
+              </strong>
               <li className="pb-5 text-sm" style={{ lineHeight: "2" }}>
                 We provide loving oversight that involves listening, counseling,
                 and prayer. We do our best to be a parent figure in the lives of
                 the children.
               </li>
-              <strong className="text-primary font-semibold">Education</strong>
+              <strong className="text-primary text-lg font-semibold">
+                Education
+              </strong>
               <li className="pb-5 text-sm" style={{ lineHeight: "2" }}>
                 We provide K-12 educational services for all the children in our
                 program, as well as opportunities for University for the higher
                 achievers.
               </li>
-              <strong className="text-primary font-semibold">
+              <strong className="text-primary text-lg font-semibold">
                 Spiritual Development
               </strong>
               <li className="pb-5 text-sm" style={{ lineHeight: "2" }}>
@@ -76,7 +84,7 @@ const ChangingLives = () => {
         </div>
 
         {/* Right Column: Image */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full lg:mt-10 md:w-1/2">
           <img
             src="https://facethechildren.org/images/website/s-banner.webp"
             alt="Face the Children program"

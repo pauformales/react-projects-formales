@@ -2,13 +2,13 @@ import React from "react";
 
 const Affiliates = () => {
   return (
-    <section className="mb-[70px] py-16">
+    <section className="mb-[70px] py-10">
       <div className="max-w-7xl mx-auto px-4">
         <div className="w-full text-center">
           <span className="text-xs uppercase text-textyellow block mb-2">
             Trusted Affiliates
           </span>
-          <h4 className="text-primary font-semibold lg:text-4xl mb-6">
+          <h4 className="text-primary font-semibold lg:text-3xl mb-6">
             Our Advocacy Associates
           </h4>
 
@@ -16,27 +16,27 @@ const Affiliates = () => {
             <img
               src="https://facethechildren.org/images/website/logo-fwc.png"
               alt="FWC"
-              className="h-16 object-contain"
+              className="h-15 w-auto object-contain"
             />
             <img
               src="https://facethechildren.org/images/website/logo-fbs.png"
               alt="FBS"
-              className="h-16 object-contain"
+              className="h-15 w-auto object-contain"
             />
             <img
               src="https://facethechildren.org/images/website/logo-fca.png"
               alt="FCA"
-              className="h-16 object-contain"
+              className="h-15 w-auto object-contain"
             />
             <img
               src="https://facethechildren.org/images/website/logo-ftw.png"
               alt="FTW"
-              className="h-16 object-contain"
+              className="h-15 w-auto object-contain"
             />
             <img
               src="https://facethechildren.org/images/website/logo-pfm.png"
               alt="PFM"
-              className="h-16 object-contain"
+              className="h-15 w-auto object-contain"
             />
           </div>
         </div>
