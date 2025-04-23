@@ -71,7 +71,7 @@ const DonateModal = ({ isOpen, closeModal, title }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div
-        className={`bg-white rounded-md shadow-lg w-full max-w-md p-6 m-4 transform transition-all duration-300 ease-in-out ${
+        className={`bg-white rounded-md shadow-lg w-full max-w-sm p-6 m-4 transform transition-all duration-300 ease-in-out ${
           animateIn ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
         }`}
       >

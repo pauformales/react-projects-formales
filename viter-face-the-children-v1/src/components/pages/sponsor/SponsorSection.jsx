@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { residentData, nonResidentData } from "./SponsorData";
-import { FaHouse, FaPeopleGroup, FaArrowRight } from "react-icons/fa6";
+import { FaHouse, FaArrowRight } from "react-icons/fa6";
 import SponsorModal from "../../partials/modal/SponsorModal";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export default function SponsorSection() {
   const [activeTab, setActiveTab] = useState("resident");
@@ -29,10 +30,15 @@ export default function SponsorSection() {
             alt={child.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 text-white p-3">
-            <h3 className="text-lg">{child.name}</h3>
+          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-20 text-white p-2">
+            <h3 className="text-[16px]">{child.name}</h3>
             <div className="flex justify-between items-center mt-2">
-              <p className="text-sm text-textyellow mb-0">View Info</p>
+              <Link
+                to={`/children-info/${child.id}`}
+                className="text-sm text-textyellow mb-0"
+              >
+                View Info
+              </Link>
               <button
                 onClick={openModal}
                 className="flex items-center gap-1 bg-primary text-white px-4 py-2 rounded text-xs"
@@ -84,27 +90,25 @@ export default function SponsorSection() {
         </div>
 
         {activeTab === "resident" ? (
-          <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
-              {currentData.map((child, index, arr) => {
-                const isLast = index === arr.length - 1;
-                const isUnevenInLg = arr.length % 4 === 1;
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+            {currentData.map((child, index, arr) => {
+              const isLast = index === arr.length - 1;
+              const isUnevenInLg = arr.length % 4 === 1;
 
-                if (isLast && isUnevenInLg) {
-                  return (
-                    <div
-                      key={child.id}
-                      className="lg:col-span-4 flex justify-start sm:justify-start md:justify-start lg:justify-center"
-                    >
-                      <Card child={child} />
-                    </div>
-                  );
-                }
+              if (isLast && isUnevenInLg) {
+                return (
+                  <div
+                    key={child.id}
+                    className="lg:col-span-4 flex justify-start sm:justify-start md:justify-start lg:justify-center"
+                  >
+                    <Card child={child} />
+                  </div>
+                );
+              }
 
-                return <Card key={child.id} child={child} />;
-              })}
-            </div>
-          </>
+              return <Card key={child.id} child={child} />;
+            })}
+          </div>
         ) : (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full justify-items-center">
