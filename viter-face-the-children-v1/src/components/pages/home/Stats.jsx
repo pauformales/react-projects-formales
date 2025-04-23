@@ -14,7 +14,7 @@ const Stats = () => {
 
         <div className="w-full md:w-1/2 text-left">
           <p className="text-xs text-orange-500 uppercase mb-2">Who we are</p>
-          <h2 className="text-lg md:text-2xl lg:text-[28px] text-primary font-semibold leading-snug mb-2">
+          <h2 className="text-lg md:text-[30px] lg:text-[28px] md:w-[75%] text-primary font-semibold leading-snug mb-2">
             Let's Share to Change a Life Today
           </h2>
           <p className="text-gray-700 text-sm w-full md:w-[95%] leading-[2]">

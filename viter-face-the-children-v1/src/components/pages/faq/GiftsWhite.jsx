@@ -7,10 +7,10 @@ const GiftsWhite = () => {
         <span className="text-xs text-textyellow uppercase mb-2">
           Every Gift Counts
         </span>
-        <h4 className="text-[#3a3b36] font-semibold text-xl lg:text-3xl mb-4">
+        <h4 className="text-[#3a3b36] font-semibold text-xl md:text-3xl lg:text-3xl mb-4">
           Together, We Make a Difference
         </h4>
-        <p className="text-sm lg:text-sm lg:max-w-[70%] w-[350px]  text-gray-600">
+        <p className="text-sm lg:text-sm lg:max-w-[90%] md:max-w-[75%]  text-gray-600">
           Together, we lend a helping hand to those in need, offering hope and
           support where it's needed most. From volunteering our time to donating
           resources, each act of kindness strengthens our community fabric.

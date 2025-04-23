@@ -8,7 +8,7 @@ const Services = () => {
           <p className="text-xs text-orange-500 uppercase mb-2">
             Our Solutions
           </p>
-          <h3 className="text-xl md:text-2xl lg:text-3xl font-semibold text-primary mb-6">
+          <h3 className="text-xl md:text-3xl lg:text-3xl font-semibold text-primary mb-6">
             Services We Provide
           </h3>
           <p className="mb-10 text-sm md:max-w-[85%] lg:max-w-[70%] leading-[2] text-gray-700">

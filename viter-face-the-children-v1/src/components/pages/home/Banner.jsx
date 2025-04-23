@@ -25,7 +25,7 @@ const Banner = () => {
           <img
             src="https://facethechildren.org/images/website/h-banner.webp"
             alt="Children Image"
-            className="w-full max-w-md md:max-w-lg lg:max-w-xl"
+            className="max-w-md md:max-w-[800px] lg:max-w-xl"
           />
         </div>
       </div>

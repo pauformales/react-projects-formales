@@ -35,7 +35,7 @@ export default function SponsorSection() {
               <p className="text-sm text-textyellow mb-0">View Info</p>
               <button
                 onClick={openModal}
-                className="flex items-center gap-1 bg-primary text-white px-3 py-1 rounded text-sm"
+                className="flex items-center gap-1 bg-primary text-white px-4 py-2 rounded text-xs"
               >
                 <span>Sponsor</span> <FaArrowRight />
               </button>
@@ -85,27 +85,25 @@ export default function SponsorSection() {
 
         {activeTab === "resident" ? (
           <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full justify-items-center">
-              {currentData.slice(0, -1).map((child) => (
-                <div key={child.id} className="w-full max-w-[280px]">
-                  <Card child={child} />
-                </div>
-              ))}
-            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
+              {currentData.map((child, index, arr) => {
+                const isLast = index === arr.length - 1;
+                const isUnevenInLg = arr.length % 4 === 1;
 
-            {currentData.length % 4 === 1 ? (
-              <div className="flex justify-center w-full -mt-8">
-                <div className="w-full max-w-[280px]">
-                  <Card child={currentData[currentData.length - 1]} />
-                </div>
-              </div>
-            ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full mt-6 justify-items-center">
-                <div className="w-full max-w-[280px]">
-                  <Card child={currentData[currentData.length - 1]} />
-                </div>
-              </div>
-            )}
+                if (isLast && isUnevenInLg) {
+                  return (
+                    <div
+                      key={child.id}
+                      className="lg:col-span-4 flex justify-start sm:justify-start md:justify-start lg:justify-center"
+                    >
+                      <Card child={child} />
+                    </div>
+                  );
+                }
+
+                return <Card key={child.id} child={child} />;
+              })}
+            </div>
           </>
         ) : (
           <>

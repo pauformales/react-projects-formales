@@ -22,17 +22,16 @@ const MainContact = () => {
   return (
     <div>
       <section className="py-16 mt-[100px] lg:mt-[150px]">
-        <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row lg:items-start lg:justify-center">
-          {/* Left Section */}
-          <div className="w-full lg:w-1/2 flex lg:justify-center">
-            <div className="lg:ml-[95px] mb-20">
-              <p className="text-textyellow uppercase text-xs  mb-1">
+        <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:items-start md:justify-center lg:flex-row lg:items-start lg:justify-center">
+          <div className="w-full md:w-1/2 lg:w-1/2 flex md:justify-center lg:justify-center">
+            <div className="md:ml-10 lg:ml-[95px] mb-20">
+              <p className="text-textyellow uppercase text-xs mb-1">
                 Let's Talk
               </p>
-              <h2 className="text-primary font-semibold lg:text-2xl text-lg  mb-5">
+              <h2 className="text-primary font-semibold md:text-2xl lg:text-2xl text-lg mb-5">
                 We're Here for You
               </h2>
-              <p className=" text-sm text-[#3a3b36] leading-[1.8] max-w-[80%]">
+              <p className="text-sm text-[#3a3b36] leading-[1.8] max-w-[80%]">
                 We believe in building strong relationships and fostering a
                 sense of community. Your feedback and inquiries are important to
                 us, and we strive to respond as quickly and thoroughly as
@@ -46,7 +45,9 @@ const MainContact = () => {
                 <span className="text-primary">
                   Philippines: +63 927 420 3409
                 </span>
-                <span className="flex col text-primary">USA +815 797 9177</span>
+                <span className="flex flex-col md:flex-none lg:ml-0 text-primary">
+                  USA +815 797 9177
+                </span>
               </div>
 
               <p className="text-[#3a3b36] text-sm mb-2">
@@ -59,21 +60,18 @@ const MainContact = () => {
             </div>
           </div>
 
-          {/* Right Section (Form) */}
-          <div className="w-full lg:w-1/2">
-            <form className="flex flex-col gap-4 w-[530px] text-sm">
+          <div className="w-full md:w-1/2 lg:w-1/2">
+            <form className="flex flex-col gap-4 w-full max-w-[530px] text-sm">
               <FloatingInput label="Name" name="name" />
               <FloatingInput label="Email" name="email" type="email" />
               <FloatingInput label="Phone" name="phone" type="tel" />
               <FloatingInput label="Subject" name="subject" />
-
-              {/* Message textarea */}
               <div className="relative w-full">
                 <textarea
                   id="message"
                   name="message"
                   rows="4"
-                  className="w-[530px] h-[300px] border border-gray-300 rounded-md px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-ring-primary resize-none"
+                  className="w-full h-[300px] border border-gray-300 rounded-md px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-ring-primary resize-none"
                   placeholder=" "
                 />
                 <label
@@ -83,7 +81,6 @@ const MainContact = () => {
                   Message
                 </label>
               </div>
-
               <button
                 type="submit"
                 className="bg-lightyellow text-white text-xs font-medium py-1.5 px-3 rounded-md hover:opacity-90 transition self-start"

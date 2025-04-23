@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import { MdClose } from "react-icons/md";
 
 const SponsorModal = ({ isOpen, closeModal, selectedChild }) => {
-  const [showModal, setShowModal] = useState(isOpen);
+  const [showModal, setShowModal] = useState(false);
+  const [animateIn, setAnimateIn] = useState(false);
   const [selectedAmount, setSelectedAmount] = useState(null);
 
   const presetAmounts = [20, 40, 50, 80, 100, 200];
@@ -14,7 +15,9 @@ const SponsorModal = ({ isOpen, closeModal, selectedChild }) => {
   useEffect(() => {
     if (isOpen) {
       setShowModal(true);
+      setTimeout(() => setAnimateIn(true), 50);
     } else {
+      setAnimateIn(false);
       const timer = setTimeout(() => setShowModal(false), 300);
       return () => clearTimeout(timer);
     }
@@ -43,9 +46,10 @@ const SponsorModal = ({ isOpen, closeModal, selectedChild }) => {
         <select
           id={name}
           name={name}
+          defaultValue=""
           className="w-full border border-primary-300 rounded-md px-3 pt-4 pb-2 text-sm bg-white text-black focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
         >
-          <option value="" disabled selected hidden></option>
+          <option value="" disabled hidden></option>
           {options.map((opt, idx) => (
             <option key={idx} value={opt}>
               {opt}
@@ -73,8 +77,8 @@ const SponsorModal = ({ isOpen, closeModal, selectedChild }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div
-        className={`bg-white rounded shadow-lg w-full max-w-sm p-6 transform transition-all duration-300 ${
-          isOpen ? "translate-y-0 opacity-100" : "translate-y-full "
+        className={`bg-white rounded shadow-lg w-full max-w-sm p-6 transform transition-all duration-300 ease-in-out ${
+          animateIn ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
         }`}
       >
         <div className="relative overflow-hidden -m-[24px] mb-6">
@@ -89,7 +93,6 @@ const SponsorModal = ({ isOpen, closeModal, selectedChild }) => {
           />
         </div>
 
-        {/* Sponsorship options */}
         <div className="mb-6">
           <h3 className="text-gray-700 font-semibold mb-3">Choose Amount</h3>
           <div className="grid grid-cols-2 gap-4">
@@ -111,7 +114,7 @@ const SponsorModal = ({ isOpen, closeModal, selectedChild }) => {
                   />
                   <span className="h-5 w-5 rounded-full border-2 flex items-center justify-center transition-all duration-200 peer-checked:bg-textyellow group-hover:bg-textyellow">
                     <svg
-                      className="w-3 h-3 text-white transition-opacity duration-200  peer-checked:opacity-100"
+                      className="w-3 h-3 text-white transition-opacity duration-200 peer-checked:opacity-100"
                       fill="none"
                       stroke="currentColor"
                       strokeWidth="3"
@@ -143,7 +146,7 @@ const SponsorModal = ({ isOpen, closeModal, selectedChild }) => {
                 />
                 <span className="h-5 w-5 rounded-full border-2 flex items-center justify-center transition-all duration-200 peer-checked:bg-textyellow group-hover:bg-textyellow">
                   <svg
-                    className="w-3 h-3 text-white transition-opacity duration-200  peer-checked:opacity-100"
+                    className="w-3 h-3 text-white transition-opacity duration-200 peer-checked:opacity-100"
                     fill="none"
                     stroke="currentColor"
                     strokeWidth="3"

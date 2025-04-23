@@ -21,17 +21,17 @@ const FloatingInput = ({ label, type = "text", name }) => (
 const ContactForm = () => {
   return (
     <section className="py-16 bg-gray-100">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row gap-12">
-        {/* Left Text Block */}
-        <div className="w-full lg:w-1/2">
-          <div className="text-left lg:ml-20">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row md:justify-between md:items-start gap-12">
+
+        <div className="w-full md:w-1/2">
+          <div className="text-left md:ml-10 lg:ml-20">
             <p className="text-textyellow uppercase text-xs mb-1">
               Frequently Asked Question
             </p>
-            <h2 className="text-primary lg:text-2xl lg:max-w-[55%] text-left font-semibold mb-2">
+            <h2 className="text-primary text-xl md:text-2xl md:max-w-[80%] font-semibold mb-2">
               Can't find what you are looking for?
             </h2>
-            <p className="text-gray-800 text-sm lg:max-w-[65%] leading-[1.8]">
+            <p className="text-gray-800 text-sm md:max-w-[90%] leading-[1.8]">
               If your questions is not listed above, you can use the form to
               send directly to us your questions.
             </p>
@@ -39,14 +39,13 @@ const ContactForm = () => {
         </div>
 
         {/* Form */}
-        <div className="w-full lg:w-[40%]">
+        <div className="w-full md:w-[45%]">
           <form className="flex flex-col gap-4 text-sm">
             <FloatingInput label="Name" name="name" />
             <FloatingInput label="Email" name="email" type="email" />
             <FloatingInput label="Phone" name="phone" type="tel" />
             <FloatingInput label="Subject" name="subject" />
 
-            {/* Message textarea */}
             <div className="relative w-full">
               <textarea
                 id="message"

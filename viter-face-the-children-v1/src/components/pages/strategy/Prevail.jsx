@@ -4,7 +4,6 @@ const Prevail = () => {
   return (
     <section className="bg-[#f4f5f7] py-16 px-6 md:px-20">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center md:justify-center gap-[50px]">
-        {/* Image */}
         <div className="w-full md:w-auto flex justify-center md:justify-between md:mr-24">
           <div>
             <img
@@ -15,7 +14,6 @@ const Prevail = () => {
           </div>
         </div>
 
-        {/* Text */}
         <div className="w-full md:max-w-[38%] text-left md:text-left mt-8">
           <p className="uppercase lg:text-sm text-xs text-textyellow mb-3">
             Prevails Forever

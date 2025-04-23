@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { MdClose } from "react-icons/md";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 
 const FloatingInput = ({
   label,
@@ -23,9 +23,10 @@ const FloatingInput = ({
       <select
         id={name}
         name={name}
+        defaultValue=""
         className="w-full border border-primary-300 rounded-md px-3 pt-4 pb-2 text-sm bg-white text-black focus:outline-none focus:ring-1 focus:ring-primary-500 focus:border-primary-500"
       >
-        <option value="" disabled selected hidden></option>
+        <option value="" disabled hidden></option>
         {options.map((opt, idx) => (
           <option key={idx} value={opt}>
             {opt}
@@ -51,12 +52,15 @@ const FloatingInput = ({
 );
 
 const DonateModal = ({ isOpen, closeModal, title }) => {
-  const [showModal, setShowModal] = useState(isOpen);
+  const [showModal, setShowModal] = useState(false);
+  const [animateIn, setAnimateIn] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
       setShowModal(true);
+      setTimeout(() => setAnimateIn(true), 50);
     } else {
+      setAnimateIn(false);
       const timer = setTimeout(() => setShowModal(false), 300);
       return () => clearTimeout(timer);
     }
@@ -67,12 +71,12 @@ const DonateModal = ({ isOpen, closeModal, title }) => {
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
       <div
-        className={`bg-white rounded-xs shadow-lg w-96 p-6 transform transition-all duration-300 ${
-          isOpen ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
+        className={`bg-white rounded-md shadow-lg w-full max-w-md p-6 m-4 transform transition-all duration-300 ease-in-out ${
+          animateIn ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
         }`}
       >
         <div className="relative -m-[24px] overflow-hidden mb-4">
-          <div className="bg-primary overflow px-4 py-5 rounded-t-xs w-full">
+          <div className="bg-primary overflow px-4 py-5 rounded-t-md w-full">
             <h2 className="text-xl font-semibold text-white">
               {title || "Donation"}
             </h2>
@@ -133,11 +137,10 @@ const DonateModal = ({ isOpen, closeModal, title }) => {
           </div>
         </div>
 
-        {/* Add a conditional route link for 'Children Sponsorship' */}
         {title === "Children Sponsorship" && (
           <div className="mt-4 text-center">
             <Link
-              to="/sponsor-section" // Replace with your actual route
+              to="/sponsor-section"
               className="text-primary hover:underline"
               onClick={closeModal}
             >

@@ -28,7 +28,7 @@ const TeamSection = () => {
     <section className="py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 text-center">
         <p className="text-xs uppercase text-textyellow mb-1">Get To Know us</p>
-        <h3 className="text-primary mb-12 font-semibold text-lg lg:text-3xl">
+        <h3 className="text-primary mb-12 font-semibold text-lg md:text-3xl lg:text-3xl">
           Our Dedicated Team
         </h3>
 
