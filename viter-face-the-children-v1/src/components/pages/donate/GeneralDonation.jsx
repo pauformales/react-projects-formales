@@ -26,7 +26,7 @@ const GeneralDonation = () => {
             <img
               src={generalDonation.image}
               alt={generalDonation.title}
-              className="w-full h-full object-cover"
+              className="lg:w-full lg:h-full mx-auto object-cover"
             />
           </div>
           <div className="flex-1 mt-10 text-[#3a3b36]">

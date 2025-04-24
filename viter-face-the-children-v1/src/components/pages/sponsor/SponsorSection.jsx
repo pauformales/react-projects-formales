@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { residentData, nonResidentData } from "./SponsorData";
 import { FaHouse, FaArrowRight } from "react-icons/fa6";
-import SponsorModal from "../../partials/modal/SponsorModal";
 import { MdOutlineFamilyRestroom } from "react-icons/md";
 import { Link } from "react-router-dom";
+import SponsorModal from "../../partials/modal/SponsorModal";
 
 export default function SponsorSection() {
   const [activeTab, setActiveTab] = useState("resident");
@@ -23,25 +23,25 @@ export default function SponsorSection() {
     };
 
     return (
-      <div className="bg-white shadow overflow-hidden relative flex flex-col h-full">
-        <div className="relative w-full overflow-hidden flex-1">
+      <div className="bg-white overflow-hidden  w-full mx-auto max-w-[280px]">
+        <div className="aspect-[3/4] relative overflow-hidden">
           <img
             src={child.img}
             alt={child.name}
             className="w-full h-full object-cover"
           />
-          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-20 text-white p-2">
-            <h3 className="text-[16px]">{child.name}</h3>
-            <div className="flex justify-between items-center mt-2">
+          <div className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-20 text-white p-3">
+            <h3 className="text-[16px] ">{child.name}</h3>
+            <div className="flex justify-between items-center">
               <Link
                 to={`/children-info/${child.id}`}
-                className="text-sm text-textyellow mb-0"
+                className="text-sm text-[#fc9827]"
               >
                 View Info
               </Link>
               <button
                 onClick={openModal}
-                className="flex items-center gap-1 bg-primary text-white px-4 py-2 rounded text-xs"
+                className="flex items-center gap-1 bg-primary rounded-md text-white px-3 py-2 text-xs hover:bg-[#2877a4] transition"
               >
                 <span>Sponsor</span> <FaArrowRight />
               </button>
@@ -50,12 +50,12 @@ export default function SponsorSection() {
         </div>
 
         <div
-          className="h-8 w-full relative overflow-hidden"
+          className="h-8 w-full relative"
           style={{
             background: `linear-gradient(to right, #eb8500 ${percentage}%, #ffbd66 ${percentage}%)`,
           }}
         >
-          <div className="absolute inset-0 flex items-center ml-2 text-white text-md font-semibold">
+          <div className="absolute inset-0 flex items-center justify-start pl-3 text-white text-sm font-semibold">
             {child.sponsored} Sponsored
           </div>
         </div>
@@ -65,7 +65,7 @@ export default function SponsorSection() {
 
   return (
     <section className="py-12 mt-[150px]">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col items-center gap-12 justify-center">
+      <div className="max-w-7xl mx-auto px-4 flex flex-col min-h-screen items-center gap-12 justify-center">
         <div className="flex justify-center gap-8 mb-2 text-[15px] font-semibold">
           <button
             onClick={() => setActiveTab("resident")}
@@ -89,45 +89,44 @@ export default function SponsorSection() {
           </button>
         </div>
 
-        {activeTab === "resident" ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full">
-            {currentData.map((child, index, arr) => {
-              const isLast = index === arr.length - 1;
-              const isUnevenInLg = arr.length % 4 === 1;
+        {/* Cards Grid */}
+        <div className="w-full px-4 md:px-6 lg:px-8">
+          <div className="mx-auto max-w-screen-xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+              {activeTab === "resident"
+                ? currentData.map((child, index, arr) => {
+                    const isLast = index === arr.length - 1;
+                    const isUnevenInLg = arr.length % 4 === 1;
 
-              if (isLast && isUnevenInLg) {
-                return (
-                  <div
-                    key={child.id}
-                    className="lg:col-span-4 flex justify-start sm:justify-start md:justify-start lg:justify-center"
-                  >
+                    if (isLast && isUnevenInLg) {
+                      return (
+                        <div
+                          key={child.id}
+                          className="lg:col-span-4 flex justify-center"
+                        >
+                          <Card child={child} />
+                        </div>
+                      );
+                    }
+
+                    return <Card key={child.id} child={child} />;
+                  })
+                : currentData
+                    .slice(0, 8)
+                    .map((child) => <Card key={child.id} child={child} />)}
+            </div>
+
+            {activeTab === "nonResident" && currentData.length > 8 && (
+              <div className="flex justify-center gap-6 mt-6">
+                {currentData.slice(8, 11).map((child) => (
+                  <div key={child.id} className="w-full max-w-[260px]">
                     <Card child={child} />
                   </div>
-                );
-              }
-
-              return <Card key={child.id} child={child} />;
-            })}
+                ))}
+              </div>
+            )}
           </div>
-        ) : (
-          <>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full justify-items-center">
-              {currentData.slice(0, 8).map((child) => (
-                <div key={child.id} className="w-full max-w-[280px]">
-                  <Card child={child} />
-                </div>
-              ))}
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-6 w-full -mt-8">
-              {currentData.slice(8, 11).map((child) => (
-                <div key={child.id} className="w-full max-w-[280px]">
-                  <Card child={child} />
-                </div>
-              ))}
-            </div>
-          </>
-        )}
+        </div>
       </div>
 
       <SponsorModal

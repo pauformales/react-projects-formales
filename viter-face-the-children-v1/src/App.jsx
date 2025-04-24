@@ -11,6 +11,9 @@ import ChildrenInfo from "./components/pages/sponsor/ChildrenInfo";
 import FeedingProgram from "./components/pages/donate/FeedingProgram";
 import GeneralDonation from "./components/pages/donate/GeneralDonation";
 import ChildrenSponsor from "./components/pages/donate/ChildrenSponsor";
+import Login from "./components/pages/access/LogIn";
+import ForgotPass from "./components/pages/access/ForgotPass";
+import CreateAcc from "./components/pages/access/CreateAcc";
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
         />
         <Route path="/donate/feeding-program" element={<FeedingProgram />} />
         <Route path="/donate/general-donation" element={<GeneralDonation />} />
+        <Route path="/access" element={<Login />} />
+        <Route path="/forgot-password" element={<ForgotPass />} />
+        <Route path="/register" element={<CreateAcc />} />
       </Routes>
     </Router>
   );

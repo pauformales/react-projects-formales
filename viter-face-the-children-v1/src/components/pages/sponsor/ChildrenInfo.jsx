@@ -32,20 +32,23 @@ const ChildrenInfo = () => {
 
       <main className="flex-grow">
         <div className="max-w-5xl mx-auto mt-[100px] px-4 py-12 mb-[100px] flex flex-col md:flex-row gap-8">
-          {/* LEFT - IMAGE */}
-          <div className="w-full md:w-[275px] relative">
-            <img
-              src={child.img}
-              alt={child.name}
-              className="w-full h-full object-cover"
-            />
-            <div
-              className="absolute -bottom-9 left-0 w-full text-white font-semibold text-[16px] px-4 py-2"
-              style={{
-                background: `linear-gradient(to right, #eb8500 ${child.sponsored}, #ffbd66 ${child.sponsored})`,
-              }}
-            >
-              {child.sponsored} - Sponsored
+          <div className="w-full md:w-[275px] flex-shrink-0">
+            <div className="w-[70%] mx-auto md:w-full">
+              <div className="aspect-[3/4] overflow-hidden">
+                <img
+                  src={child.img}
+                  alt={child.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div
+                className="text-white font-semibold text-sm md:text-[16px] px-3 py-1 md:px-4 md:py-2 text-center"
+                style={{
+                  background: `linear-gradient(to right, #eb8500 ${child.sponsored}, #ffbd66 ${child.sponsored})`,
+                }}
+              >
+                {child.sponsored} - Sponsored
+              </div>
             </div>
           </div>
 
@@ -54,12 +57,12 @@ const ChildrenInfo = () => {
             <h1 className="text-lg font-semibold mb-5">{child.name}</h1>
             <div className="h-[1px] w-full bg-gray-400 opacity-15 mb-4"></div>
             {child.age && (
-              <p className="mb-1">
+              <p className="mb-1 text-sm">
                 <span>Age:</span> {child.age}
               </p>
             )}
             {child.birthday && (
-              <p className="mb-4 ">
+              <p className="mb-4 text-sm">
                 <span>Birthday:</span> {child.birthday}
               </p>
             )}
@@ -84,7 +87,7 @@ const ChildrenInfo = () => {
       <Gifts />
       <Footer />
 
-      {/* Sponsor Modal */}
+ 
       <SponsorModal
         isOpen={isModalOpen}
         closeModal={closeModal}

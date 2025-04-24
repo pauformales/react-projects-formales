@@ -17,7 +17,7 @@ const residentData = [
     age: "10",
     birthday: "Jun 27, 2013",
     story:
-      "Ala comes from a family of 5 siblings. Her parents struggle to provide for all of them, and Ala dreams of being able to study and have a better future. She loves playing with her friends and has a natural talent for art.",
+      "Ala and his brother were abandoned on a bus that was traveling through the San Pablo City area.  When the driver discovered their abandonment he immediately contacted local authorities.  Search was made for the family but their identity was unknown.  Ala and his brother recently came into the care of Face the Children and are integrating well.  Ala is enrolled in an Independent Educational Program within Frontline Christian Academy which will tutor him to enroll at his appropriate school level.",
   },
   {
     id: 3,
@@ -27,7 +27,7 @@ const residentData = [
     age: "8",
     birthday: "Mar 10, 2017",
     story:
-      "Angelita has a passion for dancing and enjoys participating in school activities. She lives with her single mother, who works hard to support her, but the family is struggling. Angelita dreams of becoming a teacher one day.",
+      "She has been diagnosed with Cerebral palsy, and also being mentally slow. Angi is mostly crippled in both legs, and has limited use of her hands. For many years when she was just a small child, all she did was beg for alms in the city marketplace, along with her brothers and sisters. When Frontline missionaries noticed her, they began helping Angie by carrying her to the FTC Daycare Center where street kids were being fed and ministered to each day. At first Angie\\'s mother did not allow her to go back, and preferred she remain on the streets to collect money. Eventually Social Services escalated the case, and the FTC staff were allowed to rescue Angie from a dangerous and abusive situation, and Angie was brought to the FTC care center permanently. Though limited mentally due to her particular disease, Angie is happy because she has been helped in so many ways. She attended a special needs school for more than 3 years, and is now being taught to read and write through FTC staff.",
   },
   {
     id: 4,
@@ -37,7 +37,7 @@ const residentData = [
     age: "9",
     birthday: "Feb 18, 2016",
     story:
-      "Minos is an energetic child who enjoys sports, especially basketball. He lives with his father, who is a fisherman, but the family faces financial challenges. Minos hopes to one day help his father and provide for his family.",
+      "Minos and his brother were abandoned on a bus that was traveling through the San Pablo City area.  When the driver discovered their abandonment he immediately contacted local authorities.  Search was made for the family but their identity was unknown.  Minos and his brother recently came into the care of Face the Children and are integrating well.  Minos  is enrolled in grade 4 within Frontline Christian Academy.  Math and English are his strong subjects.  He is an active and sociable boy.",
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const residentData = [
     age: "9",
     birthday: "Dec 25, 2016",
     story:
-      "Angelita is a cheerful child with a love for singing. She was abandoned by her parents but was taken in by a kind-hearted aunt. Despite the hardships, Angelita remains positive and dreams of becoming a nurse to help others.",
+      "She has been diagnosed with Cerebral palsy, and also being mentally slow. Angi is mostly crippled in both legs, and has limited use of her hands. For many years when she was just a small child, all she did was beg for alms in the city marketplace, along with her brothers and sisters. When Frontline missionaries noticed her, they began helping Angie by carrying her to the FTC Daycare Center where street kids were being fed and ministered to each day. At first Angie's mother did not allow her to go back, and preferred she remain on the streets to collect money. Eventually Social Services escalated the case, and the FTC staff were allowed to rescue Angie from a dangerous and abusive situation, and Angie was brought to the FTC care center permanently. Though limited mentally due to her particular disease, Angie is happy because she has been helped in so many ways. She attended a special needs school for more than 3 years, and is now being taught to read and write through FTC staff.",
   },
   {
     id: 6,
@@ -57,7 +57,7 @@ const residentData = [
     age: "13",
     birthday: "Sep 10, 2012",
     story:
-      "Mary Joy is a hardworking and diligent student. She comes from a family with a single mother who is struggling to make ends meet. Mary Joy helps with chores at home and dreams of becoming a doctor to serve her community.",
+      "Mary Joy is 12 years old. She, her sister and cousin came into our care when a pastora from a nearby community contacted the leadership of Frontline about a situation of abuse. After investigation by our social worker, we were able to bring them to the safety of our Face The Children program. After a two week orientation, Mary Joy has now joined our home with the other children of FTC. She is a cheerful person and is looking forward to enrolling in the new school year",
   },
   {
     id: 7,
@@ -67,7 +67,7 @@ const residentData = [
     age: "14",
     birthday: "Nov 7, 2011",
     story:
-      "Carl Leam is a quiet and introspective child who loves reading books. He has a deep interest in science and aspires to become an engineer. His father is a mechanic, and Carl often helps him in his shop.",
+      "Leam came into our care in February 2024 after his father was detained in jail and his mother abandoned him. He was found roaming the streets of Sto. Tomas with his younger brother. He is currently being assessed for his educational level and will be enrolled at FCA (Frontline Christian Academy) this coming school year.",
   },
   {
     id: 8,
@@ -77,7 +77,7 @@ const residentData = [
     age: "12",
     birthday: "Jun 3, 2013",
     story:
-      "Charissa is a kind and caring child who loves animals. She dreams of becoming a veterinarian. She lives with her grandparents, who have raised her since she was young. Despite their struggles, Charissa remains positive and hopeful.",
+      "Charice and her siblings recently came into our care after their mother abandoned them. Their father is currently detained in jail. Charice was rescued from the streets of Calamba where she was roaming and begging for food. She is currently being assessed for her educational level and will be enrolled at FCA (Frontline Christian Academy) for the 2024/2025 school year.",
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ const residentData = [
     age: "15",
     birthday: "Apr 19, 2010",
     story:
-      "Chelsey is a resilient and determined girl who has faced many challenges in life. Her father is an overseas worker, and her mother stays at home to care for Chelsey and her siblings. Chelsey dreams of becoming a lawyer to help others in her community.",
+      "Chelsey  was neglected and then abandoned by her parents.  When the mother and father separated Chelsey and her siblings were in the care of their mother.  The mother went to work overseas and left them in the care of another man who abandoned them.  The mother does not respond to contact. Her brother, JL, became the one who cared for his siblings.  Chelsey is enrolled in grade 2 at Frontline Christian Academy and is interacting well within Face the Children.",
   },
   {
     id: 10,
@@ -220,7 +220,7 @@ const nonResidentData = [
     age: "11",
     birthday: "Mar 17, 2014",
     story:
-      "Trixie Mae is a compassionate and caring girl who enjoys helping others. She comes from a family with financial struggles, but she remains optimistic. Trixie dreams of becoming a nurse to take care of people.",
+      "She came to Face the Children with her older sister, Rose Mae. She is from a poverty stricken area of Manila. Due to the many stresses of poverty, her mother left after she was born. Trixie ended up daily facing the dangers of neglect and abandonment on the streets with her sister.Through the interaction of a Frontline missionary and the Social Services, FTC was able to bring Trixie into full time care and protection. She has now received medical care, and the protective love of caring overseers. In only one year her health improvements have been incredibly encouraging!",
   },
   {
     id: 23,
@@ -230,7 +230,7 @@ const nonResidentData = [
     age: "10",
     birthday: "Aug 21, 2015",
     story:
-      "Danica is a bright student who enjoys reading and learning. Her parents are both working hard to support the family, but they face many challenges. Danica wants to become a teacher to help children like her.",
+      "Danica entered into the FTC program with two sisters and cousins in 2012. They had all been roaming streets each day looking for money and food to survive on. Before I only knew how to beg on the streets and I never went to school. But thanks to the FTC workers, who care about us, I now have hope for a good future. I enjoy singing, playing with toys, and watching movies. Danica is enrolled at the Frontline Christian Academy.",
   },
   {
     id: 24,
@@ -240,7 +240,7 @@ const nonResidentData = [
     age: "12",
     birthday: "Oct 14, 2013",
     story:
-      "Rose Mae is a hardworking and friendly girl who loves singing and dancing. She comes from a single-parent household and helps her mother with household chores. Rose Mae dreams of becoming a doctor to help those in need.",
+      "My name is Rose Mae. I am here at Face the Children with my sister Trixie. My family is from a very poor area in Manila. Due to the many stresses of poverty, my mom left after my sister was born. The missionaries of Frontline found my sister and I in Manila, and they helped us come to this safe and blessed place. I am so thankful for Frontline! In the first year here I finally experienced schooling, and now I am enrolled and studying at Frontline Christian Academy!I know God rescued my sister and I for a reason and that He has big plans for our lives.",
   },
   {
     id: 25,
@@ -250,7 +250,7 @@ const nonResidentData = [
     age: "10",
     birthday: "Sep 1, 2015",
     story:
-      "Rachelle is a sweet and caring child who enjoys playing with her siblings. She lives with her parents, who are struggling to support their family. Rachelle dreams of becoming a nurse to take care of others.",
+      "My name is Rachelle. Before I was even 2 years old, my brother and I were noticed on the streets with my Dad. I was very small, very sick, and needed help. The Frontline missionaries helped us. I was put in the hospital to get better, and when I was released, the government social services allowed my brother and I to go to Face the Children. I am now attending at the Frontline Christian Academy. They have taught me to be good, to behave, and to read, write and speak english. I can only see out of one eye, because of malnourishment when I was younger, but the doctors say my other eye is fine and I am thankful for God bringing me to FTC. I always enjoy when visitors come here to FTC. The thing I enjoy the most is playing games and eating!",
   },
   {
     id: 26,
@@ -260,7 +260,7 @@ const nonResidentData = [
     age: "13",
     birthday: "Apr 5, 2012",
     story:
-      "Richard is an energetic and outgoing boy who enjoys playing football. He lives with his father, who works as a construction worker, and his mother stays at home. Richard dreams of becoming a professional athlete.",
+      "Richard (aka Donny) comes from a broken home. After being neglected completely by his mother, his father was forced to leave the area, abandoning Donny in the aftermath. He was brought to us by the local Social Services. He is a great young boy full of energy, love, and kindness. He has been with us for around a year. He loves to play basketball and is working hard to catch up on his education.",
   },
   {
     id: 27,
@@ -270,7 +270,7 @@ const nonResidentData = [
     age: "14",
     birthday: "Jun 28, 2011",
     story:
-      "Mary Grace is a dedicated student who loves reading and writing. She comes from a family of six and her parents work hard to support them. Mary Grace dreams of becoming a writer and sharing her stories with the world.",
+      "I came to the FTC with my two sisters, Danica and Mary Ann. I am now attending School at the Frontline Christian Academy. Before I came to FTC I was always begging for money every night in the town. When I get some money we would buy food. One day we were noticed by some missionaries, who saw us begging, and they began to help us. Eventually, we were allowed to come to the FTC. Now I am not begging, and not saying curse words. God is working in my life, and I am learning about Him everyday. There are no bad memories or experiences here! And I am so happy now that I can eat properly and begin my education. I enjoy singing and playing with the other kids here.",
   },
   {
     id: 28,
@@ -280,7 +280,7 @@ const nonResidentData = [
     age: "12",
     birthday: "Jul 4, 2015",
     story:
-      "Eugene Lance is a shy but intelligent boy who enjoys reading books and solving puzzles. He comes from a family with financial struggles, but he is determined to make a better life for himself and his family.",
+      '*Note: this is a special sponsorship which also funds an individual cretaker for Eugene. Eugene had a Pediactric Assesment as was diagnosed that his site would not return, and that he has slight autism. Eugene was severely neglected during his primary years and, before coming to Face the Children, he was never taught to properly communicate or take care of himself Eugene "LanLan" Diaz was born to Leona, his mother who was a victim of abandonment. As her younger sister says, Leona never received anything from that man, no letters, nothing, nothing. After a long time Leona met another man, got married, and was blessed with a baby girl. But in 1998, a tragic incident happen when Leona was stabbed to death by a drug addicted man. After this incident Leona\'s husband left, leaving Lanlan, who was then 3 years old, in the care of a distant relative. However, due to poverty, this became a serious problem between the new guardian couple. Lanlan was an "added burden," and became the subject of quarrels. Later, Lanlan was transferred to a living quarters unsuitable for humans, in the middle of a small field. He was not tended to properly, not fed well or regularly, and endured years of deprivation and aloneness. He became sickly and malnourished, and this may have been the cause of his total blindness. In 2006 Frontline staff became aware of LanLan, and in only a matter of days acquirred custody of him. Since then he has grown, developed, and undergone several surguries to repair problems in his digestive system. Though he is healthier now, and can still learn, much time was lost in formative years, and his blindness has been diagnosed as irreversible.',
   },
   {
     id: 29,
