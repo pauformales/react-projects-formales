@@ -52,7 +52,6 @@ const ChildrenInfo = () => {
             </div>
           </div>
 
-
           <div className="flex-1 mt-10 text-[#3a3b36]">
             <h1 className="text-lg font-semibold mb-5">{child.name}</h1>
             <div className="h-[1px] w-full bg-gray-400 opacity-15 mb-4"></div>
@@ -87,7 +86,6 @@ const ChildrenInfo = () => {
       <Gifts />
       <Footer />
 
- 
       <SponsorModal
         isOpen={isModalOpen}
         closeModal={closeModal}
