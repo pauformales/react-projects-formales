@@ -1,3 +1,4 @@
+// App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/pages/home/Home";
 import About from "./components/pages/about/About";
@@ -14,6 +15,7 @@ import ChildrenSponsor from "./components/pages/donate/ChildrenSponsor";
 import Login from "./components/pages/access/LogIn";
 import ForgotPass from "./components/pages/access/ForgotPass";
 import CreateAcc from "./components/pages/access/CreateAcc";
+import ChildSponsor from "./components/pages/childcard/ChildSponsor";
 
 function App() {
   return (
@@ -26,13 +28,11 @@ function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/strategy" element={<Strategy />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/sponsor" element={<Sponsor />} />
+        <Route path="/childcard" element={<ChildSponsor />} /> {/* ✅ ROUTE */}
         <Route path="/donate" element={<Donate />} />
+        {/* <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/children-info/:id" element={<ChildrenInfo />} />
-        <Route
-          path="/donate/children-sponsorship"
-          element={<ChildrenSponsor />}
-        />
+        <Route path="/donate/children-sponsorship" element={<ChildrenSponsor />} /> */}
         <Route path="/donate/feeding-program" element={<FeedingProgram />} />
         <Route path="/donate/general-donation" element={<GeneralDonation />} />
         <Route path="/access" element={<Login />} />

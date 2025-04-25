@@ -26,6 +26,8 @@ export default function Login() {
     setTouched((prev) => ({ ...prev, [field]: true }));
   };
 
+  const isButtonDisabled = !email.trim() || !password.trim();
+
   return (
     <section className="bg-white min-h-screen flex justify-center px-6">
       <div
@@ -119,7 +121,12 @@ export default function Login() {
 
             <button
               type="submit"
-              className="w-full bg-primary hover:opacity-90 text-white text-[12px] font-medium py-2 px-4 rounded-md transition"
+              disabled={isButtonDisabled}
+              className={`w-full ${
+                isButtonDisabled
+                  ? "bg-[#3e9bd0] opacity-50 cursor-not-allowed"
+                  : "bg-primary hover:opacity-90"
+              } text-white text-[12px] font-medium py-2 px-4 rounded-md transition`}
             >
               Login
             </button>

@@ -23,9 +23,12 @@ export default function ForgotPass() {
   const isButtonDisabled = !email.trim();
 
   return (
-    <section className="bg-white min-h-screen flex justify-center px-6 pt-[150px]">
-      <div className="w-full max-w-2xl flex flex-col items-center justify-start">
-        <div className="w-full md:w-3/4 lg:w-1/2 flex flex-col items-center">
+    <section className="bg-white min-h-screen flex justify-center px-6">
+      <div
+        className="w-full max-w-2xl flex flex-col items-center justify-start"
+        style={{ transform: "translateY(clamp(5rem, 12vw, 8rem))" }}
+      >
+        <div className="w-96 p-6 flex flex-col items-center">
           <img
             src="/src/assets/ftc_svg_logo.svg"
             alt="Logo"

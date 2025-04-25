@@ -15,11 +15,11 @@ const Questions = () => {
   };
 
   return (
-    <section className="py-16 mt-20 lg:mt-[150px] bg-white text-center">
+    <section className="py-16 mt-20 md:mt-[150px] lg:mt-[150px] bg-white text-center">
       <span className="text-textyellow lg:text-xs text-xs uppercase">
         Your Questions, Our Clarity
       </span>
-      <h3 className="lg:text-[45px] text-2xl mb-5 font-semibold text-[#3a3b36] lg:mt-4">
+      <h3 className="lg:text-[45px] text-2xl md:text-3xl mb-5 font-semibold text-[#3a3b36] lg:mt-4">
         Our Commitment to Child Development
       </h3>
 
@@ -51,7 +51,6 @@ const Questions = () => {
                   {activeId === item.id ? "›" : "›"}
                 </span>
               </button>
-
 
               {activeId === item.id && (
                 <div className="lg:absolute lg:left-full text-sm lg:ml-[150px] lg:top-0 w-full lg:w-[400px] mt-4 lg:mt-0 border border-blue-300 bg-gray-100 rounded-lg p-4 text-gray-700 shadow-md z-10">

@@ -8,7 +8,7 @@ const ChangingLives = () => {
           <img
             src="https://facethechildren.org/images/website/s-banner.webp"
             alt="Face the Children program"
-            className="w-full h-auto object-cover"
+            className="w-full h-auto md:w-[650px] lg:mt-[50px] mx-auto object-cover"
           />
         </div>
 
@@ -37,7 +37,7 @@ const ChangingLives = () => {
 
           <div className="my-10">
             <p className="text-sm text-textyellow uppercase mb-1">Our Action</p>
-            <h2 className="md:text-3xl text-primary font-semibold mb-2">
+            <h2 className="md:text-3xl lg:w-[500px] text-primary font-semibold mb-2">
               Creating Lasting Change through Our Intervention
             </h2>
             <p

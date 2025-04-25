@@ -55,7 +55,7 @@ export default function SponsorSection() {
             background: `linear-gradient(to right, #eb8500 ${percentage}%, #ffbd66 ${percentage}%)`,
           }}
         >
-          <div className="absolute inset-0 flex items-center justify-start pl-3 text-white text-sm font-semibold">
+          <div className="absolute inset-0 flex items-center justify-start pl-3 text-white text-[15px] font-semibold">
             {child.sponsored} Sponsored
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function SponsorSection() {
           </button>
         </div>
 
-        {/* Cards Grid */}
+
         <div className="w-full px-4 md:px-6 lg:px-8">
           <div className="mx-auto max-w-screen-xl">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">

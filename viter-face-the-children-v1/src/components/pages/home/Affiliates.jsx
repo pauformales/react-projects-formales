@@ -14,27 +14,27 @@ const Affiliates = () => {
 
           <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
             <img
-              src="https://facethechildren.org/images/website/logo-fwc.png"
+              src="./img/associates/logo-fwc.png"
               alt="FWC"
               className="h-15 w-auto object-contain"
             />
             <img
-              src="https://facethechildren.org/images/website/logo-fbs.png"
+              src="./img/associates/logo-fbs.png"
               alt="FBS"
               className="h-15 w-auto object-contain"
             />
             <img
-              src="https://facethechildren.org/images/website/logo-fca.png"
+              src="./img/associates/logo-fca.png"
               alt="FCA"
               className="h-15 w-auto object-contain"
             />
             <img
-              src="https://facethechildren.org/images/website/logo-ftw.png"
+              src="./img/associates/logo-ftw.png"
               alt="FTW"
               className="h-15 w-auto object-contain"
             />
             <img
-              src="https://facethechildren.org/images/website/logo-pfm.png"
+              src="./img/associates/logo-pfm.png"
               alt="PFM"
               className="h-15 w-auto object-contain"
             />

@@ -23,7 +23,7 @@ const Services = () => {
 
         <div className="w-full md:w-1/2 flex justify-center md:justify-end">
           <img
-            src="https://facethechildren.org/images/website/h-service.webp"
+            src="/public/img/home/h-service.webp"
             alt="Services"
             className="w-full max-w-lg mx-auto"
           />

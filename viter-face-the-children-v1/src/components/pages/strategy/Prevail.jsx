@@ -3,7 +3,7 @@ import React from "react";
 const Prevail = () => {
   return (
     <section className="bg-[#f4f5f7] py-16 px-6 md:px-20">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center md:justify-center gap-[50px]">
+      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center md:justify-center lg:gap-[50px]">
         <div className="w-full md:w-auto flex justify-center md:justify-between md:mr-24">
           <div>
             <img
@@ -14,15 +14,15 @@ const Prevail = () => {
           </div>
         </div>
 
-        <div className="w-full md:max-w-[38%] text-left md:text-left mt-8">
-          <p className="uppercase lg:text-sm text-xs text-textyellow mb-3">
+        <div className="w-full md:w-[38%] text-left md:text-left mt-8">
+          <p className="uppercase text-xs text-textyellow mb-3">
             Prevails Forever
           </p>
-          <h2 className="lg:text-3xl text-lg font-semibold text-primary mb-4">
+          <h2 className="lg:text-3xl md:text-3xl text-lg font-semibold text-primary mb-4">
             Love Never Fails
           </h2>
           <p
-            className="text-[#3a3b36] text-sm mb-5"
+            className="text-[#3a3b36] text-sm mb-5 md:max-w-[700px]"
             style={{ lineHeight: "2" }}
           >
             Many children we serve come to us with psychological, behavioral

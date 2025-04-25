@@ -1,41 +1,87 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Select from "react-select";
+import countryList from "react-select-country-list";
 
 export default function CreateAcc() {
-  const [form, setForm] = useState({
+  const [formData, setFormData] = useState({
     name: "",
     email: "",
     address: "",
     city: "",
     state: "",
-    country: "",
+    country: null,
     zip: "",
   });
 
+  const [errors, setErrors] = useState({});
+  const [touched, setTouched] = useState({});
+  const countries = countryList().getData();
+
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleCountryChange = (value) => {
+    setFormData((prev) => ({ ...prev, country: value }));
+  };
+
+  const handleBlur = (field) => {
+    setTouched((prev) => ({ ...prev, [field]: true }));
+    const value =
+      field === "country" ? formData.country?.value : formData[field];
+    if (!value || !value.trim()) {
+      setErrors((prev) => ({ ...prev, [field]: "Required" }));
+    } else {
+      setErrors((prev) => {
+        const newErrors = { ...prev };
+        delete newErrors[field];
+        return newErrors;
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Registering:", form);
+    const newErrors = {};
+    Object.keys(formData).forEach((field) => {
+      const value =
+        field === "country" ? formData[field]?.value : formData[field];
+      if (!value || !value.trim()) {
+        newErrors[field] = "Required";
+      }
+    });
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length === 0) {
+      console.log("Submitting:", formData);
+    }
   };
 
-  const isButtonDisabled = Object.values(form).some((val) => !val.trim());
+  const isButtonDisabled = Object.entries(formData).some(([key, value]) =>
+    key === "country" ? !value : value.trim() === ""
+  );
+
+  const customComponents = {
+    DropdownIndicator: () => null,
+    IndicatorSeparator: () => null,
+  };
 
   return (
-    <section className="bg-white min-h-screen flex justify-center px-6 pt-[54px]">
-      <div className="w-full max-w-2xl flex flex-col items-center justify-start">
+    <section className="bg-white min-h-screen flex justify-center px-6 pt-[60px]">
+      <div
+        className="w-full max-w-2xl flex flex-col items-center justify-start"
+        style={{ transform: "translateY(clamp(5rem, 12vw, 8rem))" }}
+      >
         <div className="w-full md:w-3/4 lg:w-1/2 flex flex-col items-center">
           <img
             src="/src/assets/ftc_svg_logo.svg"
             alt="Logo"
-            className="w-[300px] h-[89px] mb-8"
+            className="w-[300px] h-[89px] mb-6"
           />
 
-          <div className="w-full max-w-[400px]">
-            <h2 className="text-lg font-semibold text-[#3a3b36] mb-4">
+          <div className="w-full max-w-[400px] mb-2 mt-2">
+            <h2 className="text-lg font-semibold text-textblack mb-4">
               Create a Donor Account
             </h2>
           </div>
@@ -44,67 +90,14 @@ export default function CreateAcc() {
             onSubmit={handleSubmit}
             className="flex flex-col gap-6 w-full max-w-[400px] text-sm"
           >
-            {/* Name */}
-            <div className="relative w-full">
-              <label
-                htmlFor="name"
-                className="absolute left-2 -top-2 bg-white px-1 text-xs text-primary z-10"
-              >
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                value={form.name}
-                onChange={handleChange}
-                className="w-full h-[38px] border border-gray-300 rounded-lg px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-              />
-            </div>
-
-            {/* Email */}
-            <div className="relative w-full">
-              <label
-                htmlFor="email"
-                className="absolute left-2 -top-2 bg-white px-1 text-xs text-primary z-10"
-              >
-                Email
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                value={form.email}
-                onChange={handleChange}
-                className="w-full h-[38px] border border-gray-300 rounded-lg px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-              />
-            </div>
-
-            {/* Address */}
-            <div className="relative w-full">
-              <label
-                htmlFor="address"
-                className="absolute left-2 -top-2 bg-white px-1 text-xs text-primary z-10"
-              >
-                Address
-              </label>
-              <textarea
-                id="address"
-                name="address"
-                rows={3}
-                value={form.address}
-                onChange={handleChange}
-                className="w-full border border-gray-300 rounded-lg px-3 pt-4 pb-8 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-              />
-            </div>
-
-            {/* Other fields */}
+     
             {[
-              { name: "city", label: "City", type: "text" },
-              { name: "state", label: "State/Province", type: "text" },
-              { name: "country", label: "Country", type: "text" },
-              { name: "zip", label: "Zip Code", type: "text" },
-            ].map(({ name, label, type }) => (
+              { label: "Name", name: "name", type: "text" },
+              { label: "Email", name: "email", type: "email" },
+              { label: "Address", name: "address", type: "textarea" },
+              { label: "City", name: "city", type: "text" },
+              { label: "State/Province", name: "state", type: "text" },
+            ].map(({ label, name, type }) => (
               <div key={name} className="relative w-full">
                 <label
                   htmlFor={name}
@@ -112,33 +105,141 @@ export default function CreateAcc() {
                 >
                   {label}
                 </label>
-                <input
-                  id={name}
-                  name={name}
-                  type={type}
-                  value={form[name]}
-                  onChange={handleChange}
-                  className="w-full h-[38px] border border-gray-300 rounded-lg px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 focus:ring-primary focus:border-primary"
-                />
+                {type === "textarea" ? (
+                  <textarea
+                    id={name}
+                    name={name}
+                    value={formData[name]}
+                    onChange={handleChange}
+                    onBlur={() => handleBlur(name)}
+                    className={`w-full h-[100px] border ${
+                      errors[name] ? "border-red-500" : "border-gray-300"
+                    } rounded-lg px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 ${
+                      errors[name]
+                        ? "focus:ring-red-500 focus:border-red-500"
+                        : "focus:ring-primary focus:border-primary"
+                    }`}
+                  />
+                ) : (
+                  <input
+                    type={type}
+                    id={name}
+                    name={name}
+                    value={formData[name]}
+                    onChange={handleChange}
+                    onBlur={() => handleBlur(name)}
+                    className={`w-full h-[38px] border ${
+                      errors[name] ? "border-red-500" : "border-gray-300"
+                    } rounded-lg px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 ${
+                      errors[name]
+                        ? "focus:ring-red-500 focus:border-red-500"
+                        : "focus:ring-primary focus:border-primary"
+                    }`}
+                  />
+                )}
+                {touched[name] && errors[name] && (
+                  <span className="absolute right-2 -bottom-5 text-xs italic text-red-500">
+                    {errors[name]}
+                  </span>
+                )}
               </div>
             ))}
+
+
+            <div className="relative w-full z-10">
+              <label
+                htmlFor="country"
+                className="absolute left-2 top-2 bg-white px-1 text-xs text-primary z-20"
+              >
+                Country
+              </label>
+              <Select
+                id="country"
+                name="country"
+                options={countries}
+                value={formData.country}
+                onChange={handleCountryChange}
+                onBlur={() => handleBlur("country")}
+                placeholder=""
+                menuPlacement="bottom"
+                className="pt-4"
+                classNamePrefix="react-select"
+                components={customComponents}
+                styles={{
+                  control: (base, state) => ({
+                    ...base,
+                    borderColor: errors.country ? "red" : "#d1d5db",
+                    boxShadow: state.isFocused
+                      ? errors.country
+                        ? "0 0 0 1px red"
+                        : "0 0 0 1px #3b82f6"
+                      : "none",
+                    "&:hover": {
+                      borderColor: errors.country ? "red" : "#a1a1aa",
+                    },
+                    height: "38px",
+                    minHeight: "38px",
+                  }),
+                  menu: (provided) => ({
+                    ...provided,
+                    zIndex: 20,
+                  }),
+                }}
+              />
+              {touched.country && errors.country && (
+                <span className="absolute right-2 -bottom-5 text-xs italic text-red-500">
+                  {errors.country}
+                </span>
+              )}
+            </div>
+
+            <div className="relative w-full">
+              <label
+                htmlFor="zip"
+                className="absolute left-2 -top-2 bg-white px-1 text-xs text-primary"
+              >
+                Zip Code
+              </label>
+              <input
+                type="text"
+                id="zip"
+                name="zip"
+                value={formData.zip}
+                onChange={handleChange}
+                onBlur={() => handleBlur("zip")}
+                className={`w-full h-[38px] border ${
+                  errors.zip ? "border-red-500" : "border-gray-300"
+                } rounded-lg px-3 pt-4 pb-2 text-sm focus:outline-none focus:ring-1 ${
+                  errors.zip
+                    ? "focus:ring-red-500 focus:border-red-500"
+                    : "focus:ring-primary focus:border-primary"
+                }`}
+              />
+              {touched.zip && errors.zip && (
+                <span className="absolute right-2 -bottom-5 text-xs italic text-red-500">
+                  {errors.zip}
+                </span>
+              )}
+            </div>
 
             <button
               type="submit"
               disabled={isButtonDisabled}
-              className={`w-full mt-2 ${
+              className={`w-full h-[32px] ${
                 isButtonDisabled
                   ? "bg-[#3e9bd0] opacity-50 cursor-not-allowed"
                   : "bg-primary hover:opacity-90"
-              } text-white text-[12px] font-medium py-2 px-4 rounded-md transition`}
+              } text-white text-[11.5px] font-medium py-2 mt-2 px-4 rounded-md transition`}
             >
               Register
             </button>
 
-            <div className="text-xs text-gray-600 text-left">
-              <Link to="/access">
-                Back to <span className="text-primary underline">login</span>
-              </Link>
+            <div className="text-xs text-gray-600 left">
+              <p>
+                <Link to="/access">
+                  Back to <span className="text-primary underline">login</span>
+                </Link>
+              </p>
             </div>
           </form>
         </div>

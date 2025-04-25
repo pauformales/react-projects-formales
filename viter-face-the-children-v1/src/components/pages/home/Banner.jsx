@@ -23,7 +23,7 @@ const Banner = () => {
 
         <div className="w-full flex justify-center md:justify-end">
           <img
-            src="https://facethechildren.org/images/website/h-banner.webp"
+            src="/public/img/home/h-banner.webp"
             alt="Children Image"
             className="max-w-md md:max-w-[800px] lg:max-w-xl"
           />

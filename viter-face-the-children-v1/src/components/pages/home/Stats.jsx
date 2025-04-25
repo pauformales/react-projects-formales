@@ -6,7 +6,7 @@ const Stats = () => {
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center md:gap-16 lg:gap-60">
         <div className="w-full md:w-1/2 flex justify-center sm:justify-start">
           <img
-            src="https://facethechildren.org/images/website/h-about.webp"
+            src="/public/img/home/h-about.webp"
             alt="Children Graphic"
             className="w-full max-w-md mx-auto"
           />

@@ -40,7 +40,7 @@ const FeedingProgram = () => {
             </p>
             <button
               onClick={openModal}
-              className="bg-primary text-white text-sm px-4 py-2 rounded-md hover:bg-opacity-90 transition"
+              className="bg-primary text-white text-sm px-4 py-1.5 rounded-md hover:bg-opacity-90 transition"
             >
               Sponsor Now
             </button>
