@@ -8,7 +8,7 @@ const Scholarship = () => {
       }}
       className=" py-40 bg-cover bg-center bg-fixed z-1"
     >
-      <div className="mx-auto px-4">
+      <div className="mx-auto max-w-[85%] px-4">
         <h2 className="text-3xl text-primary my-8">Apply for a Scholarship</h2>
         <p className="my-8 max-w-md">
           FCA's scholarship programs provide funding for qualified students.

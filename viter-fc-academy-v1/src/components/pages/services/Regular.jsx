@@ -3,7 +3,7 @@ import React from "react";
 const Regular = () => {
   return (
     <section className="w-full bg-white py-16 font-raleway">
-      <h2 className="text-5xl text-center font-light mb-16">Services</h2>
+      <h2 className="text-7xl text-center font-thin mb-16">Services</h2>
 
       <div className="max-w-[1700px] mx-auto w-full">
         <div className="flex flex-col md:flex-row items-stretch justify-between pl-10">

@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Navigation from "./Navigation";
+
+import Header from "../../partials/Header";
+import Navigation from "../../partials/Navigation";
 import Banner from "./Banner";
 import YtSection from "./YtSection";
 import Benefits from "./Benefits";
-import Footer from "./Footer";
+import Footer from "../../partials/Footer";
 import Testimonial from "./Testimonial";
 import Scholarship from "./Scholarship";
 import MapSection from "./MapSection";

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import AboutMenu from "./AboutMenu";
 import AboutContent from "./AboutContent";
-import Header from "../home/Header";
-import Navigation from "../home/Navigation";
+import Header from "../../partials/Header";
+import Footer from "../../partials/Footer";
+import Navigation from "../../partials/Navigation";
 import TeamSection from "./TeamSection";
-import Footer from "../home/Footer";
 
 const About = () => {
   const [selected, setSelected] = useState("The Founders");

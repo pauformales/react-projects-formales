@@ -24,15 +24,15 @@ export default function Navigation({ menuOpen, setMenuOpen }) {
 
     if (activeLink) {
       const { offsetLeft, offsetWidth } = activeLink;
-      setUnderlineLeft(offsetLeft + offsetWidth / 2 - 90); // center fixed 180px line
-      setUnderlineWidth(180); // fixed width
+      setUnderlineLeft(offsetLeft + offsetWidth / 2 - 80); // center fixed 200px line
+      setUnderlineWidth(195); // slightly wider
     }
   }, [location.pathname]);
 
   return (
     <>
       {/* Desktop Nav */}
-      <nav className="relative items-center justify-between py-3 text-sm font-medium font-raleway text-gray-700 hidden md:flex max-w-[1500px] mx-auto px-4">
+      <nav className="relative items-center justify-between py-3 text-base font-normal font-raleway text-gray-700 hidden md:flex max-w-[1500px] mx-auto px-4">
         <div className="flex flex-1 items-center justify-center relative">
           {navItems.map((item, index) => (
             <div
@@ -40,11 +40,11 @@ export default function Navigation({ menuOpen, setMenuOpen }) {
               className="flex flex-1 items-center justify-center relative"
               ref={(el) => (linkRefs.current[index] = el)}
             >
-              <Link to={item.path} className="text-center">
+              <Link to={item.path} className="text-sm text-center">
                 {item.label}
               </Link>
               {index < navItems.length - 1 && (
-                <div className="absolute right-0 top-1/2 h-6 w-px -translate-y-1/2 bg-gray-300" />
+                <div className="absolute right-0 top-1/2 h-9 w-px -translate-y-1/2 bg-gray-300" />
               )}
             </div>
           ))}
@@ -52,14 +52,13 @@ export default function Navigation({ menuOpen, setMenuOpen }) {
 
         {/* GIVE Button */}
         <div className="ml-8 flex-shrink-0">
-          <button className="rounded-md bg-primary px-5 py-2 text-sm font-bold text-white hover:bg-[#c9981e]">
+          <button className="rounded-md bg-primary px-6 py-2.5 text-base font-thin text-white hover:bg-[#c9981e]">
             GIVE
           </button>
         </div>
 
-        {/* Orange underline (fixed width, centered) */}
         <div
-          className="absolute -top-1  h-2 rounded-full bg-primary"
+          className="absolute -top-1 h-2 rounded-full bg-primary"
           style={{
             left: underlineLeft,
             width: underlineWidth,
@@ -67,9 +66,9 @@ export default function Navigation({ menuOpen, setMenuOpen }) {
         />
       </nav>
 
-      {/* Mobile Nav */}
+      {/* Mobile Menu (Hidden on large screens) */}
       <div
-        className={`fixed top-[88px] left-0 right-0 h-[calc(100vh-88px)] bg-white transition-transform duration-300 ease-in-out z-40 ${
+        className={`fixed top-[88px] left-0 right-0 h-[calc(100vh-88px)] bg-white transition-transform duration-300 ease-in-out z-40 lg:hidden ${
           menuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -79,35 +78,36 @@ export default function Navigation({ menuOpen, setMenuOpen }) {
               key={index}
               to={item.path}
               onClick={() => setMenuOpen(false)}
-              className={`text-lg ${
-                location.pathname === item.path ? "text-primary font-bold" : ""
+              className={`text-xl font-semibold ${
+                location.pathname === item.path ? "text-primary font-thin" : ""
               }`}
             >
               {item.label}
             </Link>
           ))}
 
-          <button className="rounded-md bg-primary px-6 py-2 text-sm font-bold text-white hover:bg-[#c9981e]">
+          <button className="rounded-md bg-primary px-6 py-2.5 text-base font-base text-white hover:bg-[#c9981e]">
             GIVE
           </button>
 
           {/* Contact Info */}
-          <div className="flex flex-col items-center text-center text-sm text-black mt-4 gap-2">
+          <div className="flex flex-col items-center text-center text-base text-black mt-4 gap-2">
             <div className="flex items-center gap-1">
-              <FaPhoneAlt className="text-black" size={12} />
+              <FaPhoneAlt className="text-black" size={14} />
               <span>(049) 521-0732</span>
             </div>
             <div className="flex items-center gap-1">
-              <FaMobileAlt className="text-black" size={12} />
+              <FaMobileAlt className="text-black" size={14} />
               <span>(+63) 908-202-0749 | (+63) 926-363-9722</span>
             </div>
           </div>
 
+          {/* Buttons */}
           <div className="flex flex-col items-center gap-2 mt-4 w-full px-8">
-            <button className="w-full rounded-md bg-myblue px-4 py-2 text-xs text-white hover:bg-[#2f4678]">
+            <button className="w-full rounded-md bg-myblue px-5 py-2.5 text-sm text-white hover:bg-[#2f4678]">
               Facebook
             </button>
-            <button className="w-full rounded-md border border-black px-4 py-2 text-xs text-black hover:bg-gray-100">
+            <button className="w-full rounded-md border border-black px-5 py-2.5 text-sm text-black hover:bg-gray-100">
               FAQ's
             </button>
           </div>

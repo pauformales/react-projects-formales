@@ -2,7 +2,7 @@ import React from "react";
 
 const Testimonial = () => {
   return (
-    <section className="w-full bg-[#f2f2f2] py-16 md:py-20 px-4 md:px-0">
+    <section className="w-full bg-[#f2f2f2]  py-16 md:py-20 px-4 md:px-0">
       <h2 className="text-3xl font-raleway font-semibold text-green-700 text-center mb-12">
         What Our Clients Have To Say
       </h2>

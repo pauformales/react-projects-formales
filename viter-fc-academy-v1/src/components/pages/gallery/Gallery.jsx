@@ -1,23 +1,20 @@
 import React from "react";
-
-import Regular from "./Regular";
-import CardServices from "./CardServices";
-import Volunteer from "./Volunteer";
 import Header from "../../partials/Header";
+import Images from "./Images";
+import Videos from "./Videos";
 import Navigation from "../../partials/Navigation";
 import Footer from "../../partials/Footer";
 
-const Services = () => {
+const Gallery = () => {
   return (
     <div>
       <Header />
       <Navigation />
-      <Regular />
-      <CardServices />
-      <Volunteer />
+      <Images />
+      <Videos />
       <Footer />
     </div>
   );
 };
 
-export default Services;
+export default Gallery;

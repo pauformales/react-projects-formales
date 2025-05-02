@@ -5,7 +5,6 @@ import InfoCard from "./InfoCard";
 const Banner = () => {
   return (
     <div className="relative min-h-screen text-white">
-      {/* Video background */}
       <video
         className="absolute top-0 left-0 w-full h-full object-cover brightness-50"
         loading="lazy"
@@ -22,17 +21,19 @@ const Banner = () => {
         Your browser does not support the video tag.
       </video>
 
-      {/* Overlay with text */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center text-center p-4">
-        <h1 className="text-4xl md:text-5xl font-bold leading-tight">
+      <div className="absolute inset-0 bg-black bg-opacity-30 flex flex-col items-center justify-center text-center p-4">
+        <h1
+          className="text-4xl md:text-7xl font-bold  font-serif"
+          style={{ lineHeight: "1.5" }}
+        >
           Building Faith, Character and <br /> Academic Excellence
         </h1>
-        <p className="mt-4 max-w-xl text-sm md:text-base">
+        <p className="mt-4 max-w-4xl text-sm md:text-base font-raleway">
           We genuinely care about the holistic development of our students, and
           continue to reach for our vision of impacting the nation through the
           development of Godly steward leaders.
         </p>
-        <button className="mt-6 px-6 py-2 bg-mygreen hover:bg-green-700 rounded text-white text-sm font-medium">
+        <button className="mt-6 px-6 py-2 bg-lime hover:bg-primary rounded text-white text-sm font-medium font-raleway">
           Inquire now!
         </button>
       </div>

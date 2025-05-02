@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import AdmissionMenu from "./AdmissionMenu";
 import AdmissionContent from "./AdmissionContent";
-import Header from "../home/Header";
-import Navigation from "../home/Navigation";
-import Footer from "../home/Footer";
+import Header from "../../partials/Header";
+import Navigation from "../../partials/Navigation";
+import Footer from "../../partials/Footer";
 
 const Admission = () => {
   const [selected, setSelected] = useState("Playschool");
